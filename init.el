@@ -21,9 +21,11 @@
 ;;
 
 ;; This is needed for Erlang mode setup
-(setq load-path (cons "/usr/local/Cellar/erlang/R15B03-1/lib/erlang/lib/tools-2.6.8/emacs" load-path))
-(setq erlang-root-dir "/usr/local/Cellar/erlang/R15B03-1")
-(setq exec-path (cons "/usr/local/Cellar/erlang/R15B03-1/bin" exec-path))
+;; From /usr/local/lib/erlang/lib/tools-2.6.13/emacs
+
+(setq load-path (cons "/Users/artem/.emacs.d/erlang/R16B03-1" load-path))
+;; (setq erlang-root-dir "/usr/local/lib/erlang/erts-5.10.4")
+(setq exec-path (cons (concat erlang-root-dir "/bin") exec-path))
 (require 'erlang-start)
 
 ;; Tell Emacs not to wait the usual 60 seconds for an Erlang prompt
