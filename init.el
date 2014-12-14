@@ -1,6 +1,25 @@
 ;; Set my email address.
 (setq user-mail-address "astemkov@gmail.com")
 
+(require 'package)
+(setq package-list '(go-mode))
+
+(add-to-list 'package-archives
+             '("melpa" . "http://melpa.org/packages/") t)
+(when (< emacs-major-version 24)
+  ;; For important compatibility libraries like cl-lib
+  (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/")))
+(package-initialize)
+
+; fetch the list of packages available
+(unless package-archive-contents
+  (package-refresh-contents))
+
+; install the missing packages
+(dolist (package package-list)
+  (unless (package-installed-p package)
+    (package-install package)))
+
 ;; Set the shell emacs uses.
 (setq explicit-shell-file-name "/bin/bash")
 
