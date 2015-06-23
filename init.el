@@ -30,6 +30,12 @@
 ;; Display time in the minibuffer
 (display-time)
 
+(load "~/gpicker/gpicker.el")
+
+(global-set-key (kbd "s-f") 'gpicker-find-file)
+(global-set-key (kbd "C-x 4 s-f") 'gpicker-find-file-other-window)
+(global-set-key (kbd "C-x 5 s-f") 'gpicker-find-file-other-frame)
+
 ;; Specify a color theme
 ;;(require 'color-theme)
 ;;(color-theme-initialize)
@@ -43,7 +49,7 @@
 ;; From /usr/local/lib/erlang/lib/tools-2.6.13/emacs
 
 (setq load-path (cons "/Users/artem/.emacs.d/erlang/R16B03-1" load-path))
-;; (setq erlang-root-dir "/usr/local/lib/erlang/erts-5.10.4")
+(setq erlang-root-dir "/usr/local/lib/erlang/erts-5.10.4")
 (setq exec-path (cons (concat erlang-root-dir "/bin") exec-path))
 (require 'erlang-start)
 
