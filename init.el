@@ -57,7 +57,7 @@
 (defvar inferior-erlang-prompt-timeout t)
 
 ;; This is needed for Distel setup
-(let ((distel-dir "/usr/local/share/distel/elisp"))
+(let ((distel-dir "~/distel/elisp"))
 (unless (member distel-dir load-path)
 ;; Add distel-dir to the end of load-path
 (setq load-path (append load-path (list distel-dir)))))
