@@ -97,6 +97,14 @@
 (add-hook 'prog-mode-hook 'whitespace-mode)
 (add-hook 'erlang-mode-hook 'whitespace-mode)
 
+;; folding functions in javascript code
+(add-hook 'js-mode-hook
+          (lambda ()
+            ;; Scan the file for nested code blocks
+            (imenu-add-menubar-index)
+            ;; Activate the folding mode
+            (hs-minor-mode t)))
+
 (setq whitespace-line-column 100) ;; limit line length
 (setq whitespace-style '(face tabs trailing lines-tail empty tab-mark))
 
