@@ -4,6 +4,8 @@
 (require 'package)
 (setq package-list '(go-mode))
 
+(add-to-list 'load-path "~/.emacs.d/lisp/")
+
 (add-to-list 'package-archives
              '("melpa" . "http://melpa.org/packages/") t)
 (when (< emacs-major-version 24)
@@ -108,11 +110,20 @@
 (setq whitespace-line-column 100) ;; limit line length
 (setq whitespace-style '(face tabs trailing lines-tail empty tab-mark))
 
+;; maybe use in future
+;; see http://mihai.bazon.net/projects/editing-javascript-with-emacs-js2-mode
+;(autoload 'js2-mode "js2-mode" nil t)
+;(add-to-list 'auto-mode-alist '("\\.js$" . js2-mode))
+
+(autoload 'espresso-mode "espresso")
+(add-to-list 'auto-mode-alist '("\\.js$" . espresso-mode))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(espresso-indent-level 2)
  '(indent-tabs-mode nil)
  '(js-curly-indent-offset 2)
  '(js-indent-level 2))
