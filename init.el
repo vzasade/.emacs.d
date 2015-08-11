@@ -118,6 +118,10 @@
 (autoload 'espresso-mode "espresso")
 (add-to-list 'auto-mode-alist '("\\.js$" . espresso-mode))
 
+(autoload 'php-mode "php-mode" "Major mode for editing php code." t)
+(add-to-list 'auto-mode-alist '("\\.php$" . php-mode))
+(add-to-list 'auto-mode-alist '("\\.inc$" . php-mode))
+
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
