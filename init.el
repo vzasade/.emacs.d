@@ -1,6 +1,15 @@
 ;; Set my email address.
 (setq user-mail-address "astemkov@gmail.com")
 
+;; for gpicker
+(setenv "PATH"
+  (concat
+   "/usr/local/bin" ":"
+   "/usr/bin" ":"
+   (getenv "PATH")
+  )
+)
+
 (require 'package)
 (setq package-list '(go-mode))
 
@@ -107,7 +116,7 @@
             ;; Activate the folding mode
             (hs-minor-mode t)))
 
-(setq whitespace-line-column 100) ;; limit line length
+(setq whitespace-line-column 80) ;; limit line length
 (setq whitespace-style '(face tabs trailing lines-tail empty tab-mark))
 
 ;; maybe use in future
