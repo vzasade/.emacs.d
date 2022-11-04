@@ -1,15 +1,6 @@
 ;; Set my email address.
 (setq user-mail-address "astemkov@gmail.com")
 
-;; for gpicker
-(setenv "PATH"
-  (concat
-   "/usr/local/bin" ":"
-   "/usr/bin" ":"
-   (getenv "PATH")
-  )
-)
-
 (require 'package)
 (setq package-list '(go-mode))
 
@@ -40,12 +31,6 @@
 
 ;; Display time in the minibuffer
 (display-time)
-
-(load "~/gpicker/gpicker.el")
-
-(global-set-key (kbd "s-f") 'gpicker-find-file)
-(global-set-key (kbd "C-x 4 s-f") 'gpicker-find-file-other-window)
-(global-set-key (kbd "C-x 5 s-f") 'gpicker-find-file-other-frame)
 
 ;; Specify a color theme
 ;;(require 'color-theme)
